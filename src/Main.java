@@ -1,5 +1,8 @@
+import command.Console;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Test commitu");
+        Console c = new Console();
+        c.start();
     }
 }
