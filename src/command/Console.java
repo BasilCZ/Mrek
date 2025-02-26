@@ -13,6 +13,7 @@ public class Console {
     public void initialization(){
         map.put("help", new Help());
         map.put("history", new History());
+        map.put("move", new Move());
 
     }
 
