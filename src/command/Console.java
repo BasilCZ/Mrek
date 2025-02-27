@@ -14,7 +14,13 @@ public class Console {
         map.put("help", new Help());
         map.put("history", new History());
         map.put("move", new Move());
-
+        map.put("combine", new Combine());
+        map.put("give", new Give());
+        map.put("inventory", new Inventory());
+        map.put("look around", new Lookaround());
+        map.put("pickup", new Pickup());
+        map.put("talk", new Talk());
+        map.put("use", new Use());
     }
 
     private Scanner scanner = new Scanner(System.in);
