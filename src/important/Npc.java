@@ -1,3 +1,5 @@
+package important;
+
 import java.util.ArrayList;
 
 public class Npc {

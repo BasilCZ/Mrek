@@ -1,9 +1,12 @@
 package command;
+import important.Player;
 
 public class Inventory extends Command {
+    private Player p = new Player();
+
     @Override
     public String execute() {
-        return "";
+        return String.valueOf(p.getInventory());
     }
 
     @Override
