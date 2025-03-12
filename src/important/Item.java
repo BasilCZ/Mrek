@@ -1,23 +1,78 @@
 package important;
 
-import world.Location;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
 
 public class Item {
+    private HashMap<Integer,Item> items = new HashMap<>();
     private String name;
+    private String description;
     private int id;
-    private Location room;
+    private int roomId;
 
-    public Item(String name, int id) {
+    public boolean loadItems(){
+        try (BufferedReader br = new BufferedReader(new FileReader("items.csv"))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] lines = line.split(";");
+                Item item = new Item(
+                        lines[0],
+                        lines[1],
+                        Integer.parseInt(lines[2]),
+                        Integer.parseInt(lines[3])
+                );
+                items.put(Integer.valueOf(lines[2]), item);
+            }
+            return true;
+        } catch (IOException e) {
+            return false;
+        }
+    }
+
+
+    public Item() {
+    }
+
+    public Item(String name, String description, int id) {
         this.name = name;
+        this.description = description;
         this.id = id;
+    }
 
+    public Item(String name, String description, int id, int roomId) {
+        this.name = name;
+        this.description = description;
+        this.id = id;
+        this.roomId = roomId;
     }
 
     @Override
     public String toString() {
         return "Item{" +
                 "name='" + name + '\'' +
-                ", id=" + id +
+                ", description='" + description + '\'' +
                 '}';
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public int getRoomId() {
+        return roomId;
+    }
+
+    public void setRoomId(int roomId) {
+        this.roomId = roomId;
+    }
+
+    public HashMap<Integer, Item> getItems() {
+        return items;
     }
 }

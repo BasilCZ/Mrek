@@ -10,7 +10,7 @@ public class WorldMap {
 
     private HashMap<Integer, Location> world = new HashMap<>();
     private int start = 0;
-    private int currentPosition = start;
+    private static int currentPosition = 0;
 
     public boolean loadMap() {
         try (BufferedReader br = new BufferedReader(new FileReader("map.csv"))) {
@@ -35,6 +35,9 @@ public class WorldMap {
 
     public Location getCurrentPosition(){
         return world.get(currentPosition);
+    }
+    public int getCurrentId(){
+        return currentPosition;
     }
 
     public void setCurrentPosition(int newPosition){

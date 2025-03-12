@@ -28,4 +28,12 @@ public class Player {
         String name = sc.next();
         return new Player(name);
     }
+
+    public void removeFromInventory(int id){
+        for(int i = 0; i < inventory.size(); i++){
+            if(inventory.get(i).getId() == id){
+                inventory.remove(i);
+            }
+        }
+    }
 }

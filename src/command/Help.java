@@ -3,7 +3,7 @@ package command;
 public class Help extends Command{
     @Override
     public String execute() {
-        return "help, history, move";
+        return "combine, give, help, history, inventory, look around, move, pickup, talk, use";
     }
 
     @Override
