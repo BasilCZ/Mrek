@@ -1,11 +1,4 @@
-talk
-up
 move
 talk
-move
-move
-move
-move
-talk
-move
-talk
+give
+inventory

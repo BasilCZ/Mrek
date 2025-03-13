@@ -12,15 +12,19 @@ public class Npc {
     private String dialogue;
     private int id;
     private int room;
+    private int whatIWant;
+    private int whatIGive;
 
     public Npc() {
     }
 
-    public Npc(String name, String dialogue, int id, int room) {
+    public Npc(String name, String dialogue, int id, int room, int whatIWant, int whatIGive) {
         this.name = name;
         this.dialogue = dialogue;
         this.id = id;
         this.room = room;
+        this.whatIWant = whatIWant;
+        this.whatIGive = whatIGive;
     }
 
     public Npc(String name, String dialogue, int room) {
@@ -38,7 +42,9 @@ public class Npc {
                         lines[0],
                         lines[1],
                         Integer.parseInt(lines[2]),
-                        Integer.parseInt(lines[3])
+                        Integer.parseInt(lines[3]),
+                        Integer.parseInt(lines[4]),
+                        Integer.parseInt(lines[5])
                 );
                 npcs.put(Integer.parseInt(lines[2]),npc);
             }
@@ -56,6 +62,8 @@ public class Npc {
                 ", dialogue='" + dialogue + '\'' +
                 ", id=" + id +
                 ", room=" + room +
+                ", whatIWant=" + whatIWant +
+                ", whatIGive=" + whatIGive +
                 '}';
     }
 
@@ -69,5 +77,17 @@ public class Npc {
 
     public String getDialogue() {
         return dialogue;
+    }
+
+    public int getWhatIWant() {
+        return whatIWant;
+    }
+
+    public int getWhatIGive() {
+        return whatIGive;
+    }
+
+    public String getName() {
+        return name;
     }
 }

@@ -12,13 +12,10 @@ public class Main {
         if(wm.loadMap()){
             if(item.loadItems()){
                 if(npc.loadNpc()) {
-                    //player.Player.makeNewPlayer();
                     Player p = new Player("Debil");
-                    p.addToInventory(new Item("Test", "Zkouška předmětu", 0));
-                    p.addToInventory(new Item("Test", "Zkouška předmětu", 1));
+                    p.addToInventory(new Item("Ladder", "C", 3));
                     Console c = new Console();
                     c.start();
-                    System.out.println(wm.getWorld());
                 } else {
                     System.out.println("Error: Couldn't load npcs");
                 }
