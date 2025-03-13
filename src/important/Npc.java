@@ -3,13 +3,12 @@ package important;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Npc {
     private static HashMap<Integer,Npc> npcs = new HashMap<>();
     private String name;
-    private String dialogue;
+    private HashMap<String,String> dialogue;
     private int id;
     private int room;
     private int whatIWant;
@@ -18,7 +17,7 @@ public class Npc {
     public Npc() {
     }
 
-    public Npc(String name, String dialogue, int id, int room, int whatIWant, int whatIGive) {
+    public Npc(String name, HashMap<String, String> dialogue, int id, int room, int whatIWant, int whatIGive) {
         this.name = name;
         this.dialogue = dialogue;
         this.id = id;
@@ -27,7 +26,15 @@ public class Npc {
         this.whatIGive = whatIGive;
     }
 
-    public Npc(String name, String dialogue, int room) {
+    public Npc(String name, int id, int room, int whatIWant, int whatIGive) {
+        this.name = name;
+        this.id = id;
+        this.room = room;
+        this.whatIWant = whatIWant;
+        this.whatIGive = whatIGive;
+    }
+
+    public Npc(String name, HashMap<String, String> dialogue, int room) {
         this.name = name;
         this.dialogue = dialogue;
         this.room = room;
@@ -38,9 +45,16 @@ public class Npc {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] lines = line.split(";");
+                HashMap<String,String> map = new HashMap<>();
+                String[] talking = lines[1].split(",");
+                for (int i = 0; i < talking.length; i++) {
+                    String[] talking2 = talking[i].split("-");
+                    map.put(talking2[0],talking2[1]);
+                    System.out.println(map);
+                }
                 Npc npc = new Npc(
                         lines[0],
-                        lines[1],
+                        map,
                         Integer.parseInt(lines[2]),
                         Integer.parseInt(lines[3]),
                         Integer.parseInt(lines[4]),
@@ -48,6 +62,7 @@ public class Npc {
                 );
                 npcs.put(Integer.parseInt(lines[2]),npc);
             }
+            //System.out.println(npcs);
             return true;
         } catch (IOException e) {
             return false;
@@ -74,7 +89,7 @@ public class Npc {
         return room;
     }
 
-    public String getDialogue() {
+    public HashMap<String, String> getDialogue() {
         return dialogue;
     }
 

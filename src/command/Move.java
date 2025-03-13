@@ -14,8 +14,8 @@ public class Move extends Command{
     @Override
     public String execute() {
         currentLocation = world.getCurrentPosition();
-        System.out.println("You are currently at: " + currentLocation.getName());
-        System.out.println("Where would you like to move?");
+        System.out.println(">> You are currently at: " + currentLocation.getName());
+        System.out.println(">> Where would you like to move?");
         //System.out.println(world.getCurrentPosition());
         String direction = sc.next();
         int moveId = -1;
@@ -33,13 +33,13 @@ public class Move extends Command{
                 moveId = currentLocation.checkNeighbors(currentLocation,3);
                 break;
             default:
-                System.out.println("Invalid direction!");
+                System.out.println(">> Invalid direction!");
         }
         if(moveId == -1){
-            return "You can't go in that direction!";
+            return ">> You can't go in that direction!";
         } else {
             world.setCurrentPosition(moveId);
-            return "You moved to: " + world.getName();
+            return ">> You moved to: " + world.getName();
         }
     }
 

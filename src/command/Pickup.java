@@ -13,7 +13,7 @@ public class Pickup extends Command {
         Item items = new Item();
         Player p = new Player();
         Scanner sc = new Scanner(System.in);
-        System.out.println("What would you like to pick up?");
+        System.out.println(">> What would you like to pick up?");
         String item = sc.nextLine();
         int room = world.getCurrentId();
         for (int i = 0; i < items.getItems().size(); i++) {
@@ -21,11 +21,11 @@ public class Pickup extends Command {
                 if(items.getItems().get(i).getName().equalsIgnoreCase(item)){
                     p.addToInventory(items.getItems().get(i));
                     items.getItems().get(i).setRoomId(-1);
-                    return "You picked up " + items.getItems().get(i).getName();
+                    return ">> You picked up " + items.getItems().get(i).getName();
                 }
             }
         }
-        return "You can't pick that up!";
+        return ">> You can't pick that up!";
     }
 
     @Override

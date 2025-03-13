@@ -29,7 +29,6 @@ public class Item {
                 );
                 items.put(Integer.valueOf(lines[2]), item);
             }
-            System.out.println(items);
             return true;
         } catch (IOException e) {
             return false;

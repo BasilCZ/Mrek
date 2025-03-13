@@ -11,7 +11,7 @@ public class Combine extends Command {
         Player p = new Player();
         Scanner sc = new Scanner(System.in);
         System.out.println(p.getInventory());
-        System.out.println("Which items do you wanna combine? (Type it in this format: ItemName1,ItemName2)");
+        System.out.println(">> Which items do you wanna combine? (Type it in this format: ItemName1,ItemName2)");
         String input = sc.nextLine();
         boolean foundFirst = false;
         boolean foundSecond = false;
@@ -27,9 +27,9 @@ public class Combine extends Command {
             p.removeFromInventory(0);
             p.removeFromInventory(1);
             p.addToInventory(new Item("Ladder","Test",3));
-            return "You sucessfully combined the parts into a fully working ladder!";
+            return ">> You sucessfully combined the parts into a fully working ladder!";
         } else {
-            return "You can't combine that!";
+            return ">> You can't combine that!";
         }
     }
 
