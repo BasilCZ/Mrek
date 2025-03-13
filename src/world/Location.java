@@ -7,26 +7,29 @@ public class Location {
     private String name;
     private int id;
     private int[] locations;
+    private boolean isLocked;
 
     public Location(){
 
     }
 
-    public Location(String name, int id, String[] locations) {
+    public Location(String name, int id, String[] locations, boolean isLocked) {
         this.name = name;
         this.id = id;
         this.locations = new int[4];
         for (int i = 0; i < locations.length; i++) {
             this.locations[i] = Integer.parseInt(locations[i]);
         }
+        this.isLocked = isLocked;
     }
 
     @Override
     public String toString() {
         return "Location{" +
                 "name='" + name + '\'' +
-                ", ID=" + id +
+                ", id=" + id +
                 ", locations=" + Arrays.toString(locations) +
+                ", isLocked=" + isLocked +
                 '}';
     }
 
@@ -40,5 +43,17 @@ public class Location {
 
     public String getName() {
         return name;
+    }
+
+    public boolean isLocked() {
+        return isLocked;
+    }
+
+    public void setLocked(boolean locked) {
+        isLocked = locked;
+    }
+
+    public int getId() {
+        return id;
     }
 }

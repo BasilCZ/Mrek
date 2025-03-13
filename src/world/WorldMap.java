@@ -17,15 +17,15 @@ public class WorldMap {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] lines = line.split(";");
-                //System.out.println(Arrays.toString(lines));
                 Location location = new Location(
                         lines[1],
                         Integer.parseInt(lines[0]),
-                        Arrays.copyOfRange(lines, 2, 6)
+                        Arrays.copyOfRange(lines, 2, 6),
+                        Boolean.parseBoolean(lines[6])
                 );
                 world.put(Integer.valueOf(lines[0]), location);
             }
-            //System.out.println(world);
+            System.out.println(world);
             return true;
         } catch (IOException e) {
             return false;
@@ -49,6 +49,6 @@ public class WorldMap {
     }
 
     public String getName(){
-        return this.world.get(currentPosition).getName();
+        return world.get(currentPosition).getName();
     }
 }

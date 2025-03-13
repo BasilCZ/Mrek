@@ -50,7 +50,6 @@ public class Npc {
                 for (int i = 0; i < talking.length; i++) {
                     String[] talking2 = talking[i].split("-");
                     map.put(talking2[0],talking2[1]);
-                    System.out.println(map);
                 }
                 Npc npc = new Npc(
                         lines[0],
@@ -62,7 +61,6 @@ public class Npc {
                 );
                 npcs.put(Integer.parseInt(lines[2]),npc);
             }
-            //System.out.println(npcs);
             return true;
         } catch (IOException e) {
             return false;
