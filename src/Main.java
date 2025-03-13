@@ -13,7 +13,7 @@ public class Main {
             if(item.loadItems()){
                 if(npc.loadNpc()) {
                     Player p = new Player("Debil");
-                    p.addToInventory(new Item("Ladder", "C", 3));
+                    p.addToInventory(new Item("Key to the gate", "C", 7));
                     Console c = new Console();
                     c.start();
                 } else {

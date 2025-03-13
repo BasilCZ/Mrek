@@ -8,9 +8,7 @@ public class Talk extends Command {
 
     @Override
     public String execute() {
-        world.loadMap();
         Npc npc = new Npc();
-        npc.loadNpc();
         int room = world.getCurrentId();
         for (int i = 0; i < npc.getNpcs().size(); i++) {
             if(npc.getNpcs().get(i).getRoom() == room){

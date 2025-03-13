@@ -11,12 +11,9 @@ public class Give extends Command{
     private WorldMap world = new WorldMap();
     @Override
     public String execute() {
-        world.loadMap();
         Player p = new Player();
         Npc npc = new Npc();
         Item item = new Item();
-        item.loadItems();
-        npc.loadNpc();
         Scanner sc = new Scanner(System.in);
         int room = world.getCurrentId();
         System.out.println(">> What would you like to give?");

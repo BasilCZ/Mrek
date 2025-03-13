@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Npc {
-    private HashMap<Integer,Npc> npcs = new HashMap<>();
+    private static HashMap<Integer,Npc> npcs = new HashMap<>();
     private String name;
     private String dialogue;
     private int id;
@@ -48,7 +48,6 @@ public class Npc {
                 );
                 npcs.put(Integer.parseInt(lines[2]),npc);
             }
-            System.out.println(npcs);
             return true;
         } catch (IOException e) {
             return false;

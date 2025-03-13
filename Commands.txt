@@ -1,4 +1,6 @@
 move
-talk
-give
-inventory
+move
+move
+move
+use
+use

@@ -13,7 +13,6 @@ public class Move extends Command{
 
     @Override
     public String execute() {
-        world.loadMap();
         currentLocation = world.getCurrentPosition();
         System.out.println("You are currently at: " + currentLocation.getName());
         System.out.println("Where would you like to move?");

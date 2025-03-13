@@ -8,7 +8,7 @@ import java.util.HashMap;
 
 public class WorldMap {
 
-    private HashMap<Integer, Location> world = new HashMap<>();
+    private static HashMap<Integer, Location> world = new HashMap<>();
     private int start = 0;
     private static int currentPosition = 0;
 
