@@ -12,9 +12,11 @@ public class Item {
     private int id;
     private int roomId;
     private int useWhere;
+    private int unlockWhat;
     private String useDialogue;
 
     public boolean loadItems(){
+        Player p = new Player();
         try (BufferedReader br = new BufferedReader(new FileReader("items.csv"))) {
             String line;
             while ((line = br.readLine()) != null) {
@@ -25,8 +27,10 @@ public class Item {
                         Integer.parseInt(lines[2]),
                         Integer.parseInt(lines[3]),
                         Integer.parseInt(lines[4]),
-                        lines[5]
+                        Integer.parseInt(lines[5]),
+                        lines[6]
                 );
+                p.addToInventory(item);
                 items.put(Integer.valueOf(lines[2]), item);
             }
             return true;
@@ -45,12 +49,13 @@ public class Item {
         this.id = id;
     }
 
-    public Item(String name, String description, int id, int roomId, int useWhere, String useDialogue) {
+    public Item(String name, String description, int id, int roomId, int useWhere, int unlockWhat, String useDialogue) {
         this.name = name;
         this.description = description;
         this.id = id;
         this.roomId = roomId;
         this.useWhere = useWhere;
+        this.unlockWhat = unlockWhat;
         this.useDialogue = useDialogue;
     }
 
@@ -92,5 +97,9 @@ public class Item {
 
     public String getUseDialogue() {
         return useDialogue;
+    }
+
+    public int getUnlockWhat() {
+        return unlockWhat;
     }
 }

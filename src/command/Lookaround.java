@@ -1,5 +1,6 @@
 package command;
 
+import important.RoomDialogue;
 import world.Location;
 import world.WorldMap;
 
@@ -8,12 +9,7 @@ public class Lookaround extends Command {
     @Override
     public String execute() {
         int currentLocation = world.getCurrentId();
-        System.out.println(currentLocation);
-        return switch (currentLocation) {
-            case 0 -> "Prison";
-            case 1 -> "Secret room";
-            default -> "";
-        };
+        return RoomDialogue.getDialogue().get(currentLocation);
     }
 
     @Override

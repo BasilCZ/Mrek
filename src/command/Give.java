@@ -25,7 +25,7 @@ public class Give extends Command{
                     if(npc.getNpcs().get(i).getWhatIWant() == p.getInventory().get(j).getId() && give.equalsIgnoreCase(p.getInventory().get(j).getName())){
                         p.removeFromInventory(npc.getNpcs().get(i).getWhatIWant());
                         p.addToInventory(item.getItems().get(npc.getNpcs().get(i).getWhatIGive()));
-                        return ">> You gave the " + item.getItems().get(npc.getNpcs().get(i).getWhatIWant()).getName() +
+                        return "You gave the " + item.getItems().get(npc.getNpcs().get(i).getWhatIWant()).getName() +
                                 " to the " + npc.getNpcs().get(i).getName() +
                                 " and they gave you " + item.getItems().get(npc.getNpcs().get(i).getWhatIGive()).getName() +
                                 " in return!";
@@ -33,7 +33,7 @@ public class Give extends Command{
                 }
             }
         }
-        return ">> You cant give that!";
+        return "You cant give that!";
     }
 
     @Override

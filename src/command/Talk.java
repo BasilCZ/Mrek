@@ -27,11 +27,11 @@ public class Talk extends Command {
                 if(npc.getNpcs().get(i).getDialogue().containsKey(input)){
                     return npc.getNpcs().get(i).getDialogue().get(input);
                 } else {
-                    return ">> Invalid dialogue option!";
+                    return "Invalid dialogue option!";
                 }
             }
         }
-        return ">> There's nobody to talk to!";
+        return "There's nobody to talk to!";
     }
 
     @Override

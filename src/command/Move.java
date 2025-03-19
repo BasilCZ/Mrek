@@ -15,7 +15,7 @@ public class Move extends Command{
     public String execute() {
         currentLocation = world.getCurrentPosition();
         System.out.println(">> You are currently at: " + currentLocation.getName());
-        System.out.println(">> Where would you like to move?");
+        System.out.println(">> Where would you like to move? (up,down,left,right,cancel");
         //System.out.println(world.getCurrentPosition());
         String direction = sc.next();
         int moveId = -1;
@@ -32,14 +32,18 @@ public class Move extends Command{
             case "right":
                 moveId = currentLocation.checkNeighbors(currentLocation,3);
                 break;
-            default:
-                System.out.println(">> Invalid direction!");
+            case "cancel":
+                return "You didn't move to any room";
         }
         if(moveId == -1){
-            return ">> You can't go in that direction!";
+            return "You can't go in that direction!";
         } else {
-            world.setCurrentPosition(moveId);
-            return ">> You moved to: " + world.getName();
+            if(world.getWorld().get(moveId).isLocked()){
+                return "The door is locked!";
+            } else {
+                world.setCurrentPosition(moveId);
+                return "You moved to: " + world.getName();
+            }
         }
     }
 

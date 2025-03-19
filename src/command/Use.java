@@ -22,7 +22,7 @@ public class Use extends Command{
                     for (int j = 0; j < world.getWorld().size(); j++) {
                         if(world.getWorld().get(j).getId() == room){
                             p.removeFromInventory(items.getItems().get(i).getId());
-                            world.getWorld().get(j).setLocked(false);
+                            world.getWorld().get(items.getItems().get(i).getUnlockWhat()).setLocked(false);
                             return items.getItems().get(i).getUseDialogue();
                         }
                     }

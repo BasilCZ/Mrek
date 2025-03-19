@@ -30,7 +30,6 @@ public class WorldMap {
         } catch (IOException e) {
             return false;
         }
-
     }
 
     public Location getCurrentPosition(){

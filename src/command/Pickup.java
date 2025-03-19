@@ -21,11 +21,11 @@ public class Pickup extends Command {
                 if(items.getItems().get(i).getName().equalsIgnoreCase(item)){
                     p.addToInventory(items.getItems().get(i));
                     items.getItems().get(i).setRoomId(-1);
-                    return ">> You picked up " + items.getItems().get(i).getName();
+                    return "You picked up " + items.getItems().get(i).getName();
                 }
             }
         }
-        return ">> You can't pick that up!";
+        return "You can't pick that up!";
     }
 
     @Override
