@@ -30,7 +30,6 @@ public class Item {
                         Integer.parseInt(lines[5]),
                         lines[6]
                 );
-                p.addToInventory(item);
                 items.put(Integer.valueOf(lines[2]), item);
             }
             return true;
@@ -64,10 +63,6 @@ public class Item {
         return "Item{" +
                 "name='" + name + '\'' +
                 ", description='" + description + '\'' +
-                ", id=" + id +
-                ", roomId=" + roomId +
-                ", useWhere=" + useWhere +
-                ", useDialogue='" + useDialogue + '\'' +
                 '}';
     }
 

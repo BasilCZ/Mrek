@@ -10,7 +10,6 @@ public class Combine extends Command {
     public String execute() {
         Player p = new Player();
         Scanner sc = new Scanner(System.in);
-        System.out.println(p.getInventory());
         System.out.println(">> Which items do you wanna combine? (Type it in this format: ItemName1,ItemName2)");
         String input = sc.nextLine();
         boolean foundFirst = false;

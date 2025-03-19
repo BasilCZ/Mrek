@@ -1,10 +1,11 @@
-Ladder part 1;A;0;0;-1;-1;null
-Ladder part 2;B;1;0;-1;-1;null
-Sausage;C;2;0;-1;-1;null
-Ladder;D;3;0;0;-1;You used the ladder and climbed it
-Mop;E;4;0;-1;-1;null
-Empty bucket;F;5;0;0;-1;You filled the bucket with water
-Bucket filled with water;G;6;0;-1;-1;null
-Key to the gate;H;7;0;12;13;You used the key to unlock the gate!
-Key to the tower 1;I;8;0;0;8;You used the key to unlock the tower 1!
-Key to the garden;J;9;0;0;10;You used the key to unlock the garden!
+Ladder part 1;Maybe if you had a second part you could combine them?;0;9;-1;-1;null
+Ladder part 2;Maybe if you had a second part you could combine them?;1;-1;-1;-1;null
+Sausage;I am not really hungry but maybe someone else is?;2;6;-1;-1;null
+Ladder;Useful to get to high places;3;-1;5;-1;You used the ladder and climbed it
+Mop;Yeahhhh I'm not feeling like cleaning rn;4;8;-1;-1;null
+Empty bucket;Perhaps you could fill it?;5;-1;11;-1;You filled the bucket with water
+Bucket filled with water;What could I possibly need this for?;6;-1;-1;-1;null
+Key to the gate;Key with a gate keychain;7;-1;12;13;You used the key to unlock the gate!
+Key to the tower 1;Key with a tower keychain;8;-1;7;8;You used the key to unlock the tower 1!
+Key to the garden;Key with a flower keychain;9;-1;3;10;You used the key to unlock the garden!
+Salt;I could use this to cook but I suck at cooking;10;6;-1;-1;null

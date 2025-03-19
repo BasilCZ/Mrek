@@ -1,4 +1,4 @@
-Prisoner;Who are you?-Dialogue A,What is this place?-Dialogue B,How do I escape?-Dialogue C,Random dialogue-Dialogue D;0;2;2;0
-Chef;Who are you?-Dialogue A,What is this place?-Dialogue B,How do I escape?-Dialogue C,Random dialogue-Dialogue D;1;6;3;1
-Cleaner;Who are you?-Dialogue A,What is this place?-Dialogue B,How do I escape?-Dialogue C,Random dialogue-Dialogue D;2;2;4;2
-Gardener;Who are you?-Dialogue A,What is this place?-Dialogue B,How do I escape?-Dialogue C,Random dialogue-Dialogue D;3;10;6;3
+Prisoner;Who are you?-I am a prisoner just like you obviously,Do you have anything useful?-Well I do have a XXX but I'm really hungry so if you get me something to eat I'll trade it with you,How do I escape?-I have no idea,What should I do?-Look around the castle for anything you can use to escape;0;2;2;8
+Chef;Who are you?-I am the head chef,What can you tell me about the king?-I would rather choose to say nothing,Do you need anything?-I do need salt so if you could bring it to me I would be really grateful,Who could help me get out of here?-Probably the gardener since he has the key to the gate;1;6;10;9
+Housekeeper;Who are you?-I am the house keeper,What is this place?-Obviously a castle?,Are you looking for something?-Yes I've lost my mop somewhere and I can't find it,Do you know where to get some food?-Try the kitchen;2;4;4;1
+Gardener;Who are you?-I am the gardener,Who is currently in the castle?-Well there's me the chef the housekeeper and a prisoner,Do you need something?-Bring me a bucket with water and I'll give you the key to the gate,Where can I find a bucket?-There's one in the theatre hall but it's on top of a shelf;3;10;6;7

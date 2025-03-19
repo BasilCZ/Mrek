@@ -19,6 +19,7 @@ public class Talk extends Command {
                 allKeys = allKeys.replace("[","");
                 allKeys = allKeys.replace("]","");
                 String keys[] = allKeys.split(", ");
+                System.out.println(">> There's the " + npc.getNpcs().get(i).getName());
                 System.out.println(">> What would you like to ask them?");
                 for (int j = 0; j < npc.getNpcs().get(i).getDialogue().size(); j++) {
                     System.out.println(keys[j]);

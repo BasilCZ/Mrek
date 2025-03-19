@@ -16,14 +16,32 @@ public class Use extends Command{
         System.out.println(">> What item would you like to use?");
         String item = sc.nextLine();
         int room = world.getCurrentId();
+        //Goes through the whole inventory
         for (int i = 0; i < p.getInventory().size(); i++) {
-            if(room == items.getItems().get(i).getUseWhere()){
+            //Checks whether you have an item that you can use in this room
+            if(room == items.getItems().get(p.getInventory().get(i).getId()).getUseWhere()){
+                //Checks if you want to use an item that you can use here
                 if(p.getInventory().get(i).getName().equalsIgnoreCase(item)){
+                    //Goes through all the rooms
                     for (int j = 0; j < world.getWorld().size(); j++) {
+                        //Checks what room you're in
                         if(world.getWorld().get(j).getId() == room){
-                            p.removeFromInventory(items.getItems().get(i).getId());
-                            world.getWorld().get(items.getItems().get(i).getUnlockWhat()).setLocked(false);
-                            return items.getItems().get(i).getUseDialogue();
+                            //Checks if the item is a key or not
+                            if(items.getItems().get(p.getInventory().get(i).getId()).getUnlockWhat() != -1){
+                                //Unlocks the door
+                                world.getWorld().get(items.getItems().get(p.getInventory().get(i).getId()).getUnlockWhat()).setLocked(false);
+                            } else {
+                                if(p.getInventory().get(i).getId() == 3){
+                                    p.addToInventory(items.getItems().get(5));
+                                } else if(p.getInventory().get(i).getId() == 5){
+                                    p.addToInventory(items.getItems().get(6));
+                                }
+                            }
+                            //Prints the use dialogue
+                            System.out.println(items.getItems().get(p.getInventory().get(i).getId()).getUseDialogue());
+                            //Removes the item you used from the inventory
+                            p.removeFromInventory(p.getInventory().get(i).getId());
+                            return "";
                         }
                     }
                 }

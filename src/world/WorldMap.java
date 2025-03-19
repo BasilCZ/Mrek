@@ -25,7 +25,6 @@ public class WorldMap {
                 );
                 world.put(Integer.valueOf(lines[0]), location);
             }
-            System.out.println(world);
             return true;
         } catch (IOException e) {
             return false;

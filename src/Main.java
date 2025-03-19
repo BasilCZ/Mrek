@@ -16,7 +16,6 @@ public class Main {
             if(rd.loadDialogue()){
                 if(item.loadItems()){
                     if(npc.loadNpc()) {
-                        Player p = new Player("Debil");
                         Console c = new Console();
                         c.start();
                     } else {
