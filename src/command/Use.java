@@ -39,7 +39,7 @@ public class Use extends Command{
                                 }
                             }
                             //Removes the item you used from the inventory
-                            p.removeFromInventory(p.getInventory().get(i).getId());
+                            p.removeFromInventory(id);
                             //Returns the use dialogue
                             return items.getItems().get(id).getUseDialogue();
                         }
