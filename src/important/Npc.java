@@ -26,20 +26,6 @@ public class Npc {
         this.whatIGive = whatIGive;
     }
 
-    public Npc(String name, int id, int room, int whatIWant, int whatIGive) {
-        this.name = name;
-        this.id = id;
-        this.room = room;
-        this.whatIWant = whatIWant;
-        this.whatIGive = whatIGive;
-    }
-
-    public Npc(String name, HashMap<String, String> dialogue, int room) {
-        this.name = name;
-        this.dialogue = dialogue;
-        this.room = room;
-    }
-
     public boolean loadNpc(){
         try (BufferedReader br = new BufferedReader(new FileReader("npc.csv"))) {
             String line;

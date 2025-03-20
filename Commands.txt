@@ -1,3 +1,2 @@
-talk
-move
-talk
+inventory
+combine

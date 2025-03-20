@@ -26,22 +26,22 @@ public class Use extends Command{
                     for (int j = 0; j < world.getWorld().size(); j++) {
                         //Checks what room you're in
                         if(world.getWorld().get(j).getId() == room){
+                            int id = p.getInventory().get(i).getId();
                             //Checks if the item is a key or not
-                            if(items.getItems().get(p.getInventory().get(i).getId()).getUnlockWhat() != -1){
+                            if(items.getItems().get(id).getUnlockWhat() != -1){
                                 //Unlocks the door
-                                world.getWorld().get(items.getItems().get(p.getInventory().get(i).getId()).getUnlockWhat()).setLocked(false);
+                                world.getWorld().get(items.getItems().get(id).getUnlockWhat()).setLocked(false);
                             } else {
-                                if(p.getInventory().get(i).getId() == 3){
+                                if(id == 3){
                                     p.addToInventory(items.getItems().get(5));
-                                } else if(p.getInventory().get(i).getId() == 5){
+                                } else if(id == 5){
                                     p.addToInventory(items.getItems().get(6));
                                 }
                             }
-                            //Prints the use dialogue
-                            System.out.println(items.getItems().get(p.getInventory().get(i).getId()).getUseDialogue());
                             //Removes the item you used from the inventory
                             p.removeFromInventory(p.getInventory().get(i).getId());
-                            return "";
+                            //Returns the use dialogue
+                            return items.getItems().get(id).getUseDialogue();
                         }
                     }
                 }

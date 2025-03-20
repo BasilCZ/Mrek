@@ -18,10 +18,13 @@ public class Give extends Command{
         int room = world.getCurrentId();
         System.out.println(">> What would you like to give?");
         String give = sc.nextLine();
-
+        //Goes through all the npcs
         for (int i = 0; i < npc.getNpcs().size(); i++) {
+            //Check if there's a npc in the current room
             if(room == npc.getNpcs().get(i).getRoom()){
+                //Goes through the inventory
                 for (int j = 0; j < p.getInventory().size(); j++) {
+                    //Checks if you have an item that the npc wants and at the same time you wanna give it to them
                     if(npc.getNpcs().get(i).getWhatIWant() == p.getInventory().get(j).getId() && give.equalsIgnoreCase(p.getInventory().get(j).getName())){
                         p.removeFromInventory(npc.getNpcs().get(i).getWhatIWant());
                         p.addToInventory(item.getItems().get(npc.getNpcs().get(i).getWhatIGive()));

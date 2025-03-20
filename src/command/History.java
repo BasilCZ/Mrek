@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.util.ArrayList;
 
 public class History extends Command{
+    //Returns all the commands that the user used
     @Override
     public String execute() {
         ArrayList<String> commands = new ArrayList<>();

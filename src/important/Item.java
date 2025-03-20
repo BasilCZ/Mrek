@@ -16,7 +16,6 @@ public class Item {
     private String useDialogue;
 
     public boolean loadItems(){
-        Player p = new Player();
         try (BufferedReader br = new BufferedReader(new FileReader("items.csv"))) {
             String line;
             while ((line = br.readLine()) != null) {
@@ -40,12 +39,6 @@ public class Item {
 
 
     public Item() {
-    }
-
-    public Item(String name, String description, int id) {
-        this.name = name;
-        this.description = description;
-        this.id = id;
     }
 
     public Item(String name, String description, int id, int roomId, int useWhere, int unlockWhat, String useDialogue) {

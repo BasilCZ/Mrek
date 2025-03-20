@@ -2,11 +2,15 @@ package command;
 import important.Player;
 
 public class Inventory extends Command {
-
+    //
     @Override
     public String execute() {
         Player p = new Player();
-        return String.valueOf(p.getInventory());
+        String inventory = "";
+        for (int i = 0; i < p.getInventory().size(); i++) {
+            inventory += p.getInventory().get(i) + "\n";
+        }
+        return inventory;
     }
 
     @Override

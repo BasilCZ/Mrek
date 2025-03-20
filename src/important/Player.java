@@ -4,12 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Player {
-    private static String name;
     private static ArrayList<Item> inventory = new ArrayList<>();
-
-    public Player(String name) {
-        Player.name = name;
-    }
 
     public Player() {
     }
