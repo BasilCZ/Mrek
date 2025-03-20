@@ -12,6 +12,7 @@ public class WorldMap {
     private int start = 0;
     private static int currentPosition = 0;
 
+    //Loads all the rooms from the file
     public boolean loadMap() {
         try (BufferedReader br = new BufferedReader(new FileReader("map.csv"))) {
             String line;

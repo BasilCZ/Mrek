@@ -26,6 +26,7 @@ public class Npc {
         this.whatIGive = whatIGive;
     }
 
+    //Loads all the npcs from the file
     public boolean loadNpc(){
         try (BufferedReader br = new BufferedReader(new FileReader("npc.csv"))) {
             String line;

@@ -15,6 +15,7 @@ public class Item {
     private int unlockWhat;
     private String useDialogue;
 
+    //Loads all the items from the file
     public boolean loadItems(){
         try (BufferedReader br = new BufferedReader(new FileReader("items.csv"))) {
             String line;

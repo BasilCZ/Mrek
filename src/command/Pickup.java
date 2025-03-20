@@ -16,8 +16,11 @@ public class Pickup extends Command {
         System.out.println(">> What would you like to pick up?");
         String item = sc.nextLine();
         int room = world.getCurrentId();
+        //Goes through all the items in the game
         for (int i = 0; i < items.getItems().size(); i++) {
+            //Checks if there's an item in this room
             if(room == items.getItems().get(i).getRoomId()){
+                //Checks if you want to pick up that item
                 if(items.getItems().get(i).getName().equalsIgnoreCase(item)){
                     p.addToInventory(items.getItems().get(i));
                     items.getItems().get(i).setRoomId(-1);

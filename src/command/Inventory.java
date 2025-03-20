@@ -10,6 +10,7 @@ public class Inventory extends Command {
             return "You don't have anything!";
         } else {
             String inventory = "";
+            //Adds all the items in the inventory under each other
             for (int i = 0; i < p.getInventory().size(); i++) {
                 inventory += p.getInventory().get(i) + "\n";
             }

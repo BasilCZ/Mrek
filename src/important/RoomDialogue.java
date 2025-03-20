@@ -8,6 +8,7 @@ import java.util.HashMap;
 public class RoomDialogue {
     private static HashMap<Integer,String> dialogue = new HashMap<>();
 
+    //Loads all the dialogue for all the rooms
     public boolean loadDialogue(){
         try (BufferedReader br = new BufferedReader(new FileReader("look_around_dialogue.csv"))) {
             String line;

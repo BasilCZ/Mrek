@@ -16,7 +16,6 @@ public class Move extends Command{
         currentLocation = world.getCurrentPosition();
         System.out.println(">> You are currently at: " + currentLocation.getName());
         System.out.println(">> Where would you like to move? (up,down,left,right,cancel)");
-        //System.out.println(world.getCurrentPosition());
         String direction = sc.next();
         int moveId = -1;
         switch (direction){
@@ -35,12 +34,15 @@ public class Move extends Command{
             case "cancel":
                 return "You didn't move to any room";
         }
+        //Player moved to the room outside
         if(moveId == 13){
             return "You successfully escaped the castle!";
+            //přidat metodu na ukončení hry
         }
         if(moveId == -1){
             return "You can't go in that direction!";
         } else {
+            //Checks if the door is locked or not
             if(world.getWorld().get(moveId).isLocked()){
                 return "The door is locked!";
             } else {
