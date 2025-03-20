@@ -6,11 +6,15 @@ public class Inventory extends Command {
     @Override
     public String execute() {
         Player p = new Player();
-        String inventory = "";
-        for (int i = 0; i < p.getInventory().size(); i++) {
-            inventory += p.getInventory().get(i) + "\n";
+        if(p.getInventory().isEmpty()){
+            return "You don't have anything!";
+        } else {
+            String inventory = "";
+            for (int i = 0; i < p.getInventory().size(); i++) {
+                inventory += p.getInventory().get(i) + "\n";
+            }
+            return inventory;
         }
-        return inventory;
     }
 
     @Override
