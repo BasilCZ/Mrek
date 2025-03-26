@@ -2,7 +2,6 @@ package command;
 
 import important.Npc;
 import world.WorldMap;
-
 import java.util.Scanner;
 
 public class Talk extends Command {

@@ -3,7 +3,6 @@ package command;
 import important.Item;
 import important.Player;
 import world.WorldMap;
-
 import java.util.Scanner;
 
 public class Use extends Command{

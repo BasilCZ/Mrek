@@ -2,7 +2,6 @@ package command;
 
 import world.Location;
 import world.WorldMap;
-
 import java.util.Scanner;
 
 public class Move extends Command{

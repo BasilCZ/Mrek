@@ -2,7 +2,6 @@ package command;
 
 import important.Item;
 import important.Player;
-
 import java.util.Scanner;
 
 public class Combine extends Command {

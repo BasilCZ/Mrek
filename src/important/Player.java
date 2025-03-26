@@ -1,7 +1,6 @@
 package important;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Player {
     private static ArrayList<Item> inventory = new ArrayList<>();

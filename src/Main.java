@@ -1,9 +1,7 @@
 import command.Console;
 import important.Item;
 import important.Npc;
-import important.Player;
 import important.RoomDialogue;
-import world.Location;
 import world.WorldMap;
 
 public class Main {
