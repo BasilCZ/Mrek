@@ -11,7 +11,7 @@ public class Move extends Command{
     private WorldMap world = new WorldMap();
 
     @Override
-    public String execute() {
+    public String  execute() {
         currentLocation = world.getCurrentPosition();
         System.out.println(">> You are currently at: " + currentLocation.getName());
         System.out.println(">> Where would you like to move? (up,down,left,right,cancel)");
