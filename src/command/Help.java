@@ -4,7 +4,7 @@ public class Help extends Command{
     //Returns all the usable commands
     @Override
     public String execute() {
-        return "combine, give, help, history, inventory, look around, move, pickup, talk, use";
+        return "combine, delete, give, help, history, inventory, look around, move, pickup, save, talk, use";
     }
 
     @Override

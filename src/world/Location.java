@@ -1,8 +1,9 @@
 package world;
 
+import java.io.Serializable;
 import java.util.Arrays;
 
-public class Location {
+public class Location implements Serializable {
 
     private String name;
     private int id;

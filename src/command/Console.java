@@ -21,6 +21,9 @@ public class Console {
         map.put("pickup", new Pickup());
         map.put("talk", new Talk());
         map.put("use", new Use());
+        map.put("save", new Save());
+        map.put("end", new End());
+        map.put("delete", new Delete());
     }
 
     private Scanner scanner = new Scanner(System.in);

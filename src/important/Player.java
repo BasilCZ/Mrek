@@ -1,8 +1,9 @@
 package important;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Player {
+public class Player implements Serializable {
     private static ArrayList<Item> inventory = new ArrayList<>();
 
     public Player() {
@@ -23,5 +24,9 @@ public class Player {
                 inventory.remove(i);
             }
         }
+    }
+
+    public static void setInventory(ArrayList<Item> inventory) {
+        Player.inventory = inventory;
     }
 }

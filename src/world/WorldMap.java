@@ -3,10 +3,11 @@ package world;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.HashMap;
 
-public class WorldMap {
+public class WorldMap implements Serializable {
 
     private static HashMap<Integer, Location> world = new HashMap<>();
     private int start = 0;
@@ -50,4 +51,9 @@ public class WorldMap {
     public String getName(){
         return world.get(currentPosition).getName();
     }
+
+    public static void setWorld(HashMap<Integer, Location> world) {
+        WorldMap.world = world;
+    }
+
 }

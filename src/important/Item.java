@@ -3,9 +3,10 @@ package important;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.HashMap;
 
-public class Item {
+public class Item implements Serializable {
     private static HashMap<Integer,Item> items = new HashMap<>();
     private String name;
     private String description;

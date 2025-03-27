@@ -1,8 +1,15 @@
 import command.Console;
 import important.Item;
 import important.Npc;
+import important.Player;
 import important.RoomDialogue;
+import saving_and_loading.LoadGame;
+import saving_and_loading.SaveGame;
 import world.WorldMap;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,6 +21,17 @@ public class Main {
             if(rd.loadDialogue()){
                 if(item.loadItems()){
                     if(npc.loadNpc()) {
+                        LoadGame load = new LoadGame();
+                        ArrayList<Object> list = null;
+                        try {
+                            if(load.load()){
+                                System.out.println("The save file successfully loaded");
+                            } else {
+                                System.out.println("The save file couldn't have been loaded/There is no save file");
+                            }
+                        } catch (IOException | ClassNotFoundException e) {
+                            throw new RuntimeException(e);
+                        }
                         Console c = new Console();
                         c.start();
                     } else {
