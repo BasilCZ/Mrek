@@ -32,9 +32,9 @@ public class Combine extends Command {
             p.removeFromInventory(0);
             p.removeFromInventory(1);
             p.addToInventory(item.getItems().get(3));
-            return ">> You sucessfully combined the parts into a fully working ladder!";
+            return "You sucessfully combined the parts into a fully working ladder!";
         } else {
-            return ">> You can't combine that!";
+            return "You can't combine that!";
         }
     }
 

@@ -6,7 +6,6 @@ import saving_and_loading.LoadGame;
 import world.WorldMap;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,7 +18,6 @@ public class Main {
                 if (item.loadItems()) {
                     if (npc.loadNpc()) {
                         LoadGame load = new LoadGame();
-                        ArrayList<Object> list = null;
                         try {
                             if (load.load()) {
                                 System.out.println("The save file successfully loaded");

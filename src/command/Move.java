@@ -37,8 +37,8 @@ public class Move extends Command {
         }
         //Player moved to the room outside
         if (moveId == 13) {
+            world.setCurrentPosition(13);
             return "You successfully escaped the castle!";
-            //přidat metodu na ukončení hry
         }
         if (moveId == -1) {
             return "You can't go in that direction!";
@@ -55,6 +55,7 @@ public class Move extends Command {
 
     @Override
     public boolean exit() {
-        return false;
+        int currentId = world.getCurrentId();
+        return currentId == 13;
     }
 }

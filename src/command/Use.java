@@ -33,6 +33,10 @@ public class Use extends Command {
                             if (items.getItems().get(id).getUnlockWhat() != -1) {
                                 //Unlocks the door
                                 world.getWorld().get(items.getItems().get(id).getUnlockWhat()).setLocked(false);
+                                if (id == 7) {
+                                    System.out.println("You can hear something opening somewhere..?");
+                                    world.getWorld().get(1).setLocked(false);
+                                }
                             } else {
                                 if (id == 3) {
                                     p.addToInventory(items.getItems().get(5));
