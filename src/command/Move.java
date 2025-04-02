@@ -2,47 +2,49 @@ package command;
 
 import world.Location;
 import world.WorldMap;
+
 import java.util.Scanner;
 
-public class Move extends Command{
+public class Move extends Command {
 
     private Scanner sc = new Scanner(System.in);
     private Location currentLocation = new Location();
     private WorldMap world = new WorldMap();
 
+    //Moves player to a diffrent room according to the direction
     @Override
-    public String  execute() {
+    public String execute() {
         currentLocation = world.getCurrentPosition();
         System.out.println(">> You are currently at: " + currentLocation.getName());
         System.out.println(">> Where would you like to move? (up,down,left,right,cancel)");
         String direction = sc.next();
         int moveId = -1;
-        switch (direction){
+        switch (direction) {
             case "up":
-                moveId = currentLocation.checkNeighbors(currentLocation,0);
+                moveId = currentLocation.checkNeighbors(currentLocation, 0);
                 break;
             case "down":
-                moveId = currentLocation.checkNeighbors(currentLocation,1);
+                moveId = currentLocation.checkNeighbors(currentLocation, 1);
                 break;
             case "left":
-                moveId = currentLocation.checkNeighbors(currentLocation,2);
+                moveId = currentLocation.checkNeighbors(currentLocation, 2);
                 break;
             case "right":
-                moveId = currentLocation.checkNeighbors(currentLocation,3);
+                moveId = currentLocation.checkNeighbors(currentLocation, 3);
                 break;
             case "cancel":
                 return "You didn't move to any room";
         }
         //Player moved to the room outside
-        if(moveId == 13){
+        if (moveId == 13) {
             return "You successfully escaped the castle!";
             //přidat metodu na ukončení hry
         }
-        if(moveId == -1){
+        if (moveId == -1) {
             return "You can't go in that direction!";
         } else {
             //Checks if the door is locked or not
-            if(world.getWorld().get(moveId).isLocked()){
+            if (world.getWorld().get(moveId).isLocked()) {
                 return "The door is locked!";
             } else {
                 world.setCurrentPosition(moveId);

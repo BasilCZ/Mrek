@@ -33,14 +33,15 @@ public class WorldMap implements Serializable {
         }
     }
 
-    public Location getCurrentPosition(){
+    public Location getCurrentPosition() {
         return world.get(currentPosition);
     }
-    public int getCurrentId(){
+
+    public int getCurrentId() {
         return currentPosition;
     }
 
-    public void setCurrentPosition(int newPosition){
+    public void setCurrentPosition(int newPosition) {
         currentPosition = newPosition;
     }
 
@@ -48,7 +49,7 @@ public class WorldMap implements Serializable {
         return world;
     }
 
-    public String getName(){
+    public String getName() {
         return world.get(currentPosition).getName();
     }
 

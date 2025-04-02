@@ -6,7 +6,7 @@ import world.WorldMap;
 import java.io.*;
 
 public class SaveGame {
-    public boolean save(){
+    public boolean save() {
         Player p = new Player();
         WorldMap wm = new WorldMap();
         try {

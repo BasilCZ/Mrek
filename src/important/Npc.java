@@ -6,9 +6,9 @@ import java.io.IOException;
 import java.util.HashMap;
 
 public class Npc {
-    private static HashMap<Integer,Npc> npcs = new HashMap<>();
+    private static HashMap<Integer, Npc> npcs = new HashMap<>();
     private String name;
-    private HashMap<String,String> dialogue;
+    private HashMap<String, String> dialogue;
     private int id;
     private int room;
     private int whatIWant;
@@ -27,16 +27,16 @@ public class Npc {
     }
 
     //Loads all the npcs from the file
-    public boolean loadNpc(){
+    public boolean loadNpc() {
         try (BufferedReader br = new BufferedReader(new FileReader("npc.csv"))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] lines = line.split(";");
-                HashMap<String,String> map = new HashMap<>();
+                HashMap<String, String> map = new HashMap<>();
                 String[] talking = lines[1].split(",");
                 for (int i = 0; i < talking.length; i++) {
                     String[] talking2 = talking[i].split("-");
-                    map.put(talking2[0],talking2[1]);
+                    map.put(talking2[0], talking2[1]);
                 }
                 Npc npc = new Npc(
                         lines[0],
@@ -46,7 +46,7 @@ public class Npc {
                         Integer.parseInt(lines[4]),
                         Integer.parseInt(lines[5])
                 );
-                npcs.put(Integer.parseInt(lines[2]),npc);
+                npcs.put(Integer.parseInt(lines[2]), npc);
             }
             return true;
         } catch (IOException e) {

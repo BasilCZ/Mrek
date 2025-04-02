@@ -5,6 +5,8 @@ import world.WorldMap;
 
 public class Lookaround extends Command {
     private WorldMap world = new WorldMap();
+
+    //Returns info about the room you're in
     @Override
     public String execute() {
         int currentLocation = world.getCurrentId();

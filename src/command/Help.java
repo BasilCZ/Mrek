@@ -1,6 +1,6 @@
 package command;
 
-public class Help extends Command{
+public class Help extends Command {
     //Returns all the usable commands
     @Override
     public String execute() {

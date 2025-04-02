@@ -1,6 +1,6 @@
 package command;
 
-public class End extends Command{
+public class End extends Command {
 
     @Override
     public String execute() {

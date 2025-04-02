@@ -4,10 +4,12 @@ import important.Item;
 import important.Npc;
 import important.Player;
 import world.WorldMap;
+
 import java.util.Scanner;
 
-public class Give extends Command{
+public class Give extends Command {
     private WorldMap world = new WorldMap();
+
     @Override
     public String execute() {
         Player p = new Player();
@@ -20,11 +22,11 @@ public class Give extends Command{
         //Goes through all the npcs
         for (int i = 0; i < npc.getNpcs().size(); i++) {
             //Check if there's a npc in the current room
-            if(room == npc.getNpcs().get(i).getRoom()){
+            if (room == npc.getNpcs().get(i).getRoom()) {
                 //Goes through the inventory
                 for (int j = 0; j < p.getInventory().size(); j++) {
                     //Checks if you have an item that the npc wants and at the same time you wanna give it to them
-                    if(npc.getNpcs().get(i).getWhatIWant() == p.getInventory().get(j).getId() && give.equalsIgnoreCase(p.getInventory().get(j).getName())){
+                    if (npc.getNpcs().get(i).getWhatIWant() == p.getInventory().get(j).getId() && give.equalsIgnoreCase(p.getInventory().get(j).getName())) {
                         p.removeFromInventory(npc.getNpcs().get(i).getWhatIWant());
                         p.addToInventory(item.getItems().get(npc.getNpcs().get(i).getWhatIGive()));
                         return "You gave the " + item.getItems().get(npc.getNpcs().get(i).getWhatIWant()).getName() +

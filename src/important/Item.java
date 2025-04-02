@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.HashMap;
 
 public class Item implements Serializable {
-    private static HashMap<Integer,Item> items = new HashMap<>();
+    private static HashMap<Integer, Item> items = new HashMap<>();
     private String name;
     private String description;
     private int id;
@@ -17,7 +17,7 @@ public class Item implements Serializable {
     private String useDialogue;
 
     //Loads all the items from the file
-    public boolean loadItems(){
+    public boolean loadItems() {
         try (BufferedReader br = new BufferedReader(new FileReader("items.csv"))) {
             String line;
             while ((line = br.readLine()) != null) {

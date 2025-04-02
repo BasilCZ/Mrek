@@ -1,12 +1,13 @@
 package command;
+
 import important.Player;
 
 public class Inventory extends Command {
-    //
+    //Returns player's inventory
     @Override
     public String execute() {
         Player p = new Player();
-        if(p.getInventory().isEmpty()){
+        if (p.getInventory().isEmpty()) {
             return "You don't have anything!";
         } else {
             String inventory = "";

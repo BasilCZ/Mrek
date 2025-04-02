@@ -8,6 +8,8 @@ import java.util.Scanner;
 
 public class Pickup extends Command {
     private WorldMap world = new WorldMap();
+
+    //Picks up an item
     @Override
     public String execute() {
         Item items = new Item();
@@ -19,9 +21,9 @@ public class Pickup extends Command {
         //Goes through all the items in the game
         for (int i = 0; i < items.getItems().size(); i++) {
             //Checks if there's an item in this room
-            if(room == items.getItems().get(i).getRoomId()){
+            if (room == items.getItems().get(i).getRoomId()) {
                 //Checks if you want to pick up that item
-                if(items.getItems().get(i).getName().equalsIgnoreCase(item)){
+                if (items.getItems().get(i).getName().equalsIgnoreCase(item)) {
                     p.addToInventory(items.getItems().get(i));
                     items.getItems().get(i).setRoomId(-1);
                     return "You picked up " + items.getItems().get(i).getName();

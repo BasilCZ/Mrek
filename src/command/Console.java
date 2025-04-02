@@ -10,7 +10,8 @@ public class Console {
     private boolean exit = false;
     private HashMap<String, Command> map = new HashMap<>();
     public static String allCommands = "Commands.txt";
-    public void initialization(){
+
+    public void initialization() {
         map.put("help", new Help());
         map.put("history", new History());
         map.put("move", new Move());
@@ -27,13 +28,14 @@ public class Console {
     }
 
     private Scanner scanner = new Scanner(System.in);
-    private void proved(){
+
+    private void proved() {
         System.out.print(">> ");
         String command = scanner.nextLine();
         command = command.trim();
         command = command.toLowerCase();
         saveCommand(command);
-        if(map.containsKey(command)){
+        if (map.containsKey(command)) {
             System.out.println(">> " + map.get(command).execute());
             exit = map.get(command).exit();
         } else {
@@ -41,28 +43,28 @@ public class Console {
         }
     }
 
-    public void start(){
+    public void start() {
         initialization();
-        try{
+        try {
             resetAllCommands();
-            do{
+            do {
                 proved();
-            } while(!exit);
-        } catch (Exception e){
+            } while (!exit);
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
 
-    private void saveCommand(String command){
-        try(BufferedWriter bw = new BufferedWriter(new FileWriter(allCommands,true))){
+    private void saveCommand(String command) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(allCommands, true))) {
             bw.write(command);
             bw.newLine();
         } catch (IOException e) {
         }
     }
 
-    private void resetAllCommands(){
-        try(BufferedWriter bw = new BufferedWriter(new FileWriter(allCommands, false))){
+    private void resetAllCommands() {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(allCommands, false))) {
         } catch (Exception e) {
         }
     }

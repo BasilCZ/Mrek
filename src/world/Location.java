@@ -10,7 +10,7 @@ public class Location implements Serializable {
     private int[] locations;
     private boolean isLocked;
 
-    public Location(){
+    public Location() {
 
     }
 
@@ -34,7 +34,7 @@ public class Location implements Serializable {
                 '}';
     }
 
-    public Integer checkNeighbors(Location loc, int direction){
+    public Integer checkNeighbors(Location loc, int direction) {
         return loc.getLocations()[direction];
     }
 
