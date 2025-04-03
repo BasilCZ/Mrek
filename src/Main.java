@@ -13,6 +13,7 @@ public class Main {
         Item item = new Item();
         Npc npc = new Npc();
         RoomDialogue rd = new RoomDialogue();
+        //Nacist všechno přes metodu přístě!!!
         if (wm.loadMap()) {
             if (rd.loadDialogue()) {
                 if (item.loadItems()) {
@@ -25,7 +26,9 @@ public class Main {
                                 System.out.println("The save file couldn't have been loaded/There is no save file");
                             }
                         } catch (IOException | ClassNotFoundException e) {
-                            throw new RuntimeException(e);
+                            //Nepoužívat throw new Runtime, protože ta hra spadne ---> používat e.getMessage()
+                            //throw new RuntimeException(e);
+                            System.out.println(e.getMessage());
                         }
                         Console c = new Console();
                         c.start();

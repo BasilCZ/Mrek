@@ -1,15 +1,2 @@
 move
-move
-move
-move
-move
-pickup
-move
-give
-move
-move
-move
-use
-move
-move
-move
+inventory

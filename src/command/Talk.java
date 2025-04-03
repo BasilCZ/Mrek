@@ -9,10 +9,14 @@ public class Talk extends Command {
     private WorldMap world = new WorldMap();
 
     //Gives you npc dialogue
+    /**
+     *Používat tento styl javadocs pro komentování metod
+     */
     @Override
     public String execute() {
         Npc npc = new Npc();
         int room = world.getCurrentId();
+        //Tato dokumentace je dobrá
         //Goes through all the npcs
         for (int i = 0; i < npc.getNpcs().size(); i++) {
             //Checks if there's a npc in this room
