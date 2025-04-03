@@ -36,7 +36,7 @@ public class Move extends Command {
                 return "You didn't move to any room";
         }
         //Player moved to the room outside
-        if (moveId == 13) {
+        if (moveId == 13 && !world.getWorld().get(13).isLocked()) {
             world.setCurrentPosition(13);
             return "You successfully escaped the castle!";
         }
